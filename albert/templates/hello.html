@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Hello Page</title>
+</head>
+<body>
+
+    <script src="{{ url_for('static', filename='gen.js') }}"></script>
+
+    {% if name %}
+        <h1>{{ name }}!</h1>
+    {% else %}
+        <h1>Please enter your name:</h1>
+        <form method="post">
+            <input type="text" name="name">
+            <input type="submit" value="Submit">
+        </form>
+    {% endif %}
+    <a href="{{ url_for('home') }}">Go Back Home</a>
+    
+
+</body>
+</html>
